@@ -26,7 +26,6 @@ export class StatusComponent implements OnInit {
   }
 
   onClick() :void {
-    console.log("clicked")
     this.onRefresh();
   }
 

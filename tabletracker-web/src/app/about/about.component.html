@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>TableTracker</h1>
+    <h2>A website for tracking if the table is available</h2>
+
+    <h3> <b> The application consists of three parts: </b> </h3>
+    <ul>
+        <li>An Arduino with a motion sensor</li>
+        <li>An ASP.NET Web API</li>
+        <li>An Angular application to interact (you're looking at it)</li>
+    </ul>
+
+    <h3><b>Workflow: </b></h3>
+    <ol>
+        <li>The Arduino sends an HTTP-request to the Web API whenever it detects movement.</li>
+        <li>The Web API stores if the table is available and the timestamp of the last update.</li>
+        <li>The web-server contacts the Web API through a GET-request and displays the result. </li>
+        <li>If too much time has passed since the last detected movement, the server will reset the state to 'Available'.</li>
+    </ol>
+
+    <h3> <b> Designed and written by: </b></h3>
+    <p>Sigurd, sbr091@uit.no</p>
+</div>
