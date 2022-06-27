@@ -1,0 +1,36 @@
+.container {
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    z-index: 15;
+    top: 10%;
+    left: 50%;
+    margin: -500px 0 0 -400px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 3%;
+    border: solid 1px black;
+}
+
+.available {
+    background-color: #4CAF50;
+}
+
+.unavailable {
+    background-color: #f44336;
+}
+
+.refresh {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 69%;
+    left:48%;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.icon-refresh {
+    transform: scale(4);
+}

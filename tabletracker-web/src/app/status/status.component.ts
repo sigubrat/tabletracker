@@ -11,19 +11,24 @@ export class StatusComponent implements OnInit {
   status: boolean = true; 
   constructor(private service: CommunicationService) { }
 
-  ngOnInit(): void {
+  onRefresh(): void {
     this.service.getStatus().subscribe( res => {
       this.status = res.isAvailable;
     });
+  }
+
+  ngOnInit(): void {
+    this.onRefresh();
   }
 
   ngOnChanges(): void {
-    this.service.getStatus().subscribe( res => {
-      this.status = res.isAvailable;
-    });
+    this.onRefresh();
   }
 
-  get currentStatus(){
-    return this.status;
+  onClick() :void {
+    console.log("clicked")
+    this.onRefresh();
   }
+
+  
 }

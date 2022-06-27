@@ -1,5 +1,11 @@
 <div>
-    <h1 *ngIf="status === true">Available!</h1>
-    <p>{{currentStatus}}</p>
-    <h1 *ngIf="status === false">Not Available!</h1>
+    <div class="container available" *ngIf="status === true">
+        <h1>Available!</h1>
+    </div>
+    <div class="container unavailable" *ngIf="status === false">
+        <h1>Not Available!</h1>
+    </div>
+    <div class="refresh" (click)="onClick()">
+        <mat-icon  class="icon-refresh">refresh</mat-icon>
+    </div>
 </div>

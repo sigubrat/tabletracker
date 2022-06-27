@@ -10,6 +10,13 @@ namespace TableTrackerAPI.Services
         // Gets the current status
         public StatusItem getStatus()
         {
+            // Check if status is deprecated
+            if(status.timeStamp.AddMinutes(1) < DateTime.Now)
+            {
+                // Change status to available
+                status.timeStamp = DateTime.Now;
+                status.isAvailable = true;
+            }
             return status;
         }
 
