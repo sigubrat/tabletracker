@@ -1,0 +1,18 @@
+version: '2'
+services:
+    tabletracker-client:
+      build:
+        context: ./tabletracker-web
+        dockerfile: Dockerfile
+      image: tabletracker-client
+      container_name: tabletracker-client
+      ports:
+        - "4200:80"
+    tabletracker-api:
+      build: 
+        context: ./TableTrackerAPI
+        dockerfile: Dockerfile
+      image: tabletracker-api
+      container_name: tabletracker-api
+      ports:
+        - "27017:80"
