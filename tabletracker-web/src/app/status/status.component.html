@@ -1,4 +1,5 @@
 <div>
-    <h1 *ngIf="status">Available!</h1>
+    <h1 *ngIf="status === true">Available!</h1>
+    <p>{{currentStatus}}</p>
     <h1 *ngIf="status === false">Not Available!</h1>
 </div>

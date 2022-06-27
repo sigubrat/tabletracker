@@ -1,22 +1,26 @@
 import { destroyPlatform, Injectable } from '@angular/core';
 import { interval, Observable, Subscription } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Status } from './status';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommunicationService {
   subscription: Subscription;
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  // HTTP session variables
+  private _url = 'https://localhost:7216/get';
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  };
 
   ngOnInit(): void {
   }
 
-  serve(): void {
-    // Every 2 seconds
-    this.subscription = interval(2*1000)
-      .subscribe(() => {
-        console.log("Test")
-    });
+  getStatus(): Observable<Status> {
+    return this.http.get<Status>(this._url, this.httpOptions);
   }
 
   ngOnDestroy() {
