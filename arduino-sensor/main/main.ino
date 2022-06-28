@@ -34,7 +34,7 @@
 char ssid[] = SECRET_SSID;
 char pwd[] = SECRET_PWD;
 
-const char serverName[] = "https://localhost"
+const char serverName[] = "placeholder"
 int port = 7216;
 
 WiFiClient wifi;
