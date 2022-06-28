@@ -14,25 +14,25 @@ export class StatusComponent implements OnInit {
 
   constructor(private service: CommunicationService) { }
 
-  onRefresh(): void {
+  doRefresh(): void {
     this.service.getStatus().subscribe( res => {
       this.status = res.isAvailable;
     });
   }
 
   ngOnInit(): void {
-    this.onRefresh();
+    this.doRefresh();
 
     const source = interval(5*1000);
-    this.subscription = source.subscribe(val => this.onRefresh());
+    this.subscription = source.subscribe(val => this.doRefresh());
   }
 
   ngOnChanges(): void {
-    this.onRefresh();
+    this.doRefresh();
   }
 
   onClick() :void {
-    this.onRefresh();
+    this.doRefresh();
   }
 
   ngOnDestroy() {
