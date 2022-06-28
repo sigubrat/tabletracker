@@ -88,13 +88,14 @@ To get a local copy up and running follow these simple steps.
 
 If this works, and you have docker installed: 
 
-Go to root-folder of the repository and compose Docker files:
+1. Go to root-folder of the repository and compose Docker files:
 
-(If you want to change any ports used, edit Dockerfile in /tabletracker-web and /TableTrackerAPI)
+2. If you want to change any ports used, edit Dockerfile in /tabletracker-web and /TableTrackerAPI
 
 ```sh
    docker-compose up -d 
 ```
+3. Set up the Arduino in the Arduino IDE
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
