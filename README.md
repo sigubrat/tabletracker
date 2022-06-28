@@ -80,7 +80,9 @@ To get a local copy up and running follow these simple steps.
    ```
 3. Open the Web API (folder: TableTrackerAPI) in Visual Studio and build
 
-4. Connect your Arduino to your computer and upload software from the Arduino IDE to the microcontroller
+4. Connect your Arduino to your computer
+
+5. Update WiFi-settings to your preference and network (secrets.h) 
 
 ### Installation - With Docker 
 
