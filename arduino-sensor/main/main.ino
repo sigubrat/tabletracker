@@ -86,7 +86,7 @@ void loop() {
   while (checking){
     available = true; 
     // Sensor stuff
-    if ("sensor.movementDetected")
+    if (sensor.movementDetected) //placeholder
       available = false; 
 
     if (available == false){

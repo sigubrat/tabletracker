@@ -1,5 +1,6 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { CommunicationService } from '../communication.service';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-status',
@@ -9,6 +10,8 @@ import { CommunicationService } from '../communication.service';
 
 export class StatusComponent implements OnInit {
   status: boolean = true; 
+  subscription: Subscription;
+
   constructor(private service: CommunicationService) { }
 
   onRefresh(): void {
@@ -19,6 +22,9 @@ export class StatusComponent implements OnInit {
 
   ngOnInit(): void {
     this.onRefresh();
+
+    const source = interval(5*1000);
+    this.subscription = source.subscribe(val => this.onRefresh());
   }
 
   ngOnChanges(): void {
@@ -29,5 +35,7 @@ export class StatusComponent implements OnInit {
     this.onRefresh();
   }
 
-  
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
