@@ -112,10 +112,10 @@ WIP 🚧
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] ASP.NET CORE API
-- [ ] Web page to display status
+- [x] ASP.NET CORE API
+- [x] Web page to display status
 - [ ] Arduino software
-    - [ ] Main workflow
+    - [x] Main workflow
     - [ ] Sensor
     - [ ] Testing
 
