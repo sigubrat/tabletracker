@@ -73,7 +73,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   bool checking = true;
-  bool available = true;
+  bool available;
   // Check motion sensor / motion sensor logic 
   // Not tested the sensor yet, so not entirely sure how the logic will be here 
   // Guesstimate:
@@ -84,18 +84,23 @@ void loop() {
    *    Wait 10 seconds in case someone was just walking by, to avoid flooding the backend
    */
   while (checking){
+    available = true; 
     // Sensor stuff
-    // On detection: 
-    available = false; 
+    if ("sensor.movementDetected")
+      available = false; 
 
     if (available == false){
-    Serial.println("Sending POST-request");
-    String contentType = "application/json";
-    // TODO: Get current datetime 
-    String postData = "{\"isAvailable\": true,\"timeStamp\": \"2022-06-28T08:17:37.270Z\"}";
+      Serial.println("Sending POST-request");
+      String contentType = "application/json";
+      // TODO: Get current datetime 
+      String postData = "{\"isAvailable\": true,\"timeStamp\": \"2022-06-28T08:17:37.270Z\"}";
 
-    client.post("/update", contentType, postData);
+      client.post("/update", contentType, postData);
 
+      checking = false; 
+      
+      // Delay for 10 seconds to avoid flooding the API with calls (Someone could be walking past)
+      delay(10 * 1000);
     }
   }
 }
