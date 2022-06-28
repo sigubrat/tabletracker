@@ -32,22 +32,25 @@ Arduino project for checking if the table tennis table is available at UiT
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+The project is a hobby-project designed to make it easier to know whether the table-tennis table is available or not at UiT - Realfagsbygget. 
+
+The solution consists of three main components. 
+
+<ol>
+  <li> Arduino with WiFi and motion sensor </li>
+  <li> ASP.NET CORE Web API </li>
+  <li> Webpage written in Angular </li> 
+</ol> 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
+* [Node.js](https://nodejs.org/en/)
 * [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [ASP.NET CORE Web API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
+* [Arduino MKR WiFi 1010](https://docs.arduino.cc/hardware/mkr-wifi-1010)
+* [Movement sensor for Arduino](https://www.kjell.com/no/produkter/elektro-og-verktoy/arduino/arduino-tilbehor/bevegelsesdetektor-for-arduino-p87060)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -55,33 +58,41 @@ Arduino project for checking if the table tennis table is available at UiT
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Visual Studio
+* Arduino IDE
+* (Docker)
 
-### Installation
+### Installation - Without Docker
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/sigubrat/tabletracker.git
    ```
-3. Install NPM packages
+2. Navigate to the web-page folder and install NPM packages
    ```sh
+   cd tabletracker-web
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+3. Open the Web API (folder: TableTrackerAPI) in Visual Studio and build
+
+4. Connect your Arduino to your computer and upload software from the Arduino IDE to the microcontroller
+
+### Installation - With Docker 
+
+If this works, and you have docker installed: 
+
+Go to root-folder of the repository and compose Docker files:
+
+(If you want to change any ports used, edit Dockerfile in /tabletracker-web and /TableTrackerAPI)
+
+```sh
+   docker-compose up -d 
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -90,9 +101,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+WIP 🚧
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -101,10 +110,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] ASP.NET CORE API
+- [ ] Web page to display status
+- [ ] Arduino software
+    - [ ] Main workflow
+    - [ ] Sensor
+    - [ ] Testing
 
 See the [open issues](https://github.com/sigubrat/tabletracker/issues) for a full list of proposed features (and known issues).
 
@@ -142,19 +153,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Sigurd - Discord: Djaff#0001 - sbr091@uit.no
 
 Project Link: [https://github.com/sigubrat/tabletracker](https://github.com/sigubrat/tabletracker)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
